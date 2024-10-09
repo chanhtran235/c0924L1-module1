@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--method: get/post-->
+<form action="#" method="get" style="width: 500px;height: 400px;background-color: lightblue">
+    <h3>Đăng ký thông tin</h3>
+    <label for="id">ID</label>
+    <input style="margin-left: 20px;margin-bottom: 20px;background-color: bisque" type="text" id="id" name="id"><br>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="birthday">Birthday</label>
+    <input type="date" id="birthday" name="birthday"><br>
+
+    <label for="email">Email</label>
+    <input type="password" id="email" name="email"><br>
+
+    <label>Gender</label>
+    <input type="radio" name="gender" value="male"><span>Nam</span>
+    <input type="radio" name="gender" value="female"><span>Nữ</span><br>
+    <label>Hobby</label>
+    <input type="checkbox" value="football"><span>Bóng đá</span>
+    <input type="checkbox" value="fishing"><span>Câu cá</span>
+    <input type="checkbox" value="shopping"><span>Mua sắm</span><br>
+    <label for="className">Class name</label>
+    <select id="className" name="className">
+        <option value="C04">C04</option>
+        <option value="C05">C05</option>
+        <option value="C06">C06</option>
+    </select><br>
+    <label>Address</label>
+    <textarea id="address" name="address" rows="2" cols="20"></textarea><br>
+    <button type="button">Gửi</button>
+    <input type="reset" value="Reset">
+</form>
+</body>
+</html>
