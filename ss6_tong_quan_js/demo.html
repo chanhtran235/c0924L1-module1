@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input oninput="changeInput()" id="name" placeholder="Nhập tên" value="chanh trần">
+<p id="result"></p>
+<button onclick="layDuLieu()">Click</button>
+<!--<p id="display"></p>-->
+<!--<p id="display2"></p>-->
+<script>
+    // các hàm hiển thị (output)
+    // alert("Hello");
+    // document.write("Nội dung hiển thị");
+    // document.getElementById("display").innerText="<button>click</button>";
+    // document.getElementById("display2").innerHTML="<button>click</button>";
+    // console.log("Hello C09");
+
+   /* hàm input:
+    prompt("nội dung thông báo);
+    let id =10;
+    let ten = prompt("Nhập tên của bạn");
+    alert("Tên bạn vừa nhập là :" +ten);
+    hàm => hàm chỉ chạy (thực thi khi nó được goi)
+    */
+
+   function layDuLieu() {
+       let name = document.getElementById("name").value;
+       alert("tên : "+ name);
+   }
+   // confirm: => vừa input + output
+   //  let check = confirm("Bạn có muốn xoá ?");
+   //  alert(check)
+
+    function changeInput() {
+        document.getElementById("result").innerText = document.getElementById("name").value;
+    }
+</script>
+</body>
+</html>
