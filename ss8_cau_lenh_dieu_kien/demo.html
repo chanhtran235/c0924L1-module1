@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // nhập vào điểm của học viên đi đánh giá
+    // + Nếu điểm >=5 thì thông báo pass module
+    // + Sai không hiển thị gì
+    // + Nếu sai thì thông báo fail module
+
+    // let score = +prompt("nhập điểm học viên");
+    //
+    // // cú pháp if-else ( if đủ)
+    // if (score>=5){
+    //     console.log("pass module");
+    // }else {
+    //     console.log("fail module");
+    // }
+    // // toán tử 3 ngôi là cách viết gọn của if-else
+    //
+    // (score>=5)? console.log("pass"): console.log("fail");
+
+    // cú pháp if bậc thang:
+    // + nếu score >=8 => giỏi
+    // + nếu 7 <=score <8 =>khá
+    // + nếu 5<=score<7 => trung bình
+    //+ nếu score<5 => yếu
+    // 7
+    if (score>=8){
+        console.log("Giỏi");
+
+    }else if (score>=7){
+        console.log("Khá");
+    }else if (score>=5){
+        console.log("Trung bình")
+    }else {
+        console.log("Yếu");
+    }
+    // không tối ưu:
+
+    // if (score>=8){
+    //     console.log("Giỏi");
+    // }
+    // if (score>=7&&score<8){
+    //     console.log("Khá");
+    // }
+    // if (score>=5&&score<7){
+    //     console.log("Trung bình")
+    // }
+    // if (score<5){
+    //     console.log("Yếu");
+    // }
+    //
+    // console.log("Kết thúc chương trình");
+
+    // tìm số lớn nhất trong 3 số a,b,c
+    // let a = + prompt("nhập a");
+    // let b = + prompt("nhập b");
+    // let c = + prompt("nhập c");
+    // if (a>b&& a>c) {
+    //     console.log("a là max ");
+    // } else if (b>c){
+    //     console.log('b là max');
+    // } else {
+    //     console.log("c là max");
+    // }
+
+    // switch-case
+
+    let month = +prompt("nhập tháng");// 2 chuỗi "2" => so sáng ===
+
+    switch (month) {
+
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            console.log("tháng này có 31 ngày");
+            break;
+        case 2:
+            console.log("Tháng 2 có 28 ngày hoặc 29");
+            break
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            console.log("tháng này có 30 ngày");
+            break;
+        default:
+            console.log("Đây không phải là tháng trong năm");
+    }
+    console.log("kết thúc chương trình");
+</script>
+</body>
+</html>
