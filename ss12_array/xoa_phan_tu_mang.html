@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [2,3,4,7,7,7,9,12];// [2,3,4,9,12,0]
+    let v = +prompt("nhập số cần xoá");
+    for (let i = 0; i <array.length ; i++) {
+        if (v == array[i]){
+            for (let j = i; j <array.length-1; j++) {
+                array[j]= array[j+1];
+            }
+            array[array.length-1]=0;
+            i--;
+        }
+
+    }
+    alert(array);
+</script>
+</body>
+</html>

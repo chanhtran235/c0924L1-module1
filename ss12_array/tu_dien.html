@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let eng = ['hello', 'you', 'apple', 'we'];
+    let vie = ['xin chào', 'bạn', 'quả táo', 'chúng ta'];
+
+    let word = prompt("nhập vào từ cần tìm :");
+    word = word.toLowerCase();
+
+    // sử dụng hàm có sẵn;
+    // let index = eng.indexOf(word); // index /-1;
+    // if (index!=-1){
+    //     alert(word +":"+ vie[index])
+    // }else {
+    //     alert(word +": không có trong từ điển")
+    // }
+
+    // không sử dụng hàm => vòng lặp
+    let index = -1;
+    for (let i = 0; i < eng.length; i++) {
+        if (eng[i] === word) {
+            index = i;
+            break;
+        }
+    }
+    if (index != -1) {
+        alert(word + ":" + vie[index])
+    } else {
+        alert(word + ": không có trong từ điển")
+    }
+
+
+</script>
+</body>
+</html>

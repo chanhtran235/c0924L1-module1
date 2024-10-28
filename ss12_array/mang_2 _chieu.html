@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // mảng 2 chiều => là 1 mảng 1 chiều + mỗi phần tử lại là mảng 1 chiều
+    let array = [
+        [2,3,4,7],
+        [5,6,7,1],
+        [5,6,8,2],
+        [5,6,3,5]
+    ];
+    // // duyệt mảng 2 chiều 2 vòng lặp for lồng nhau
+    //   // vòng for ngoài => duyệt hàng (row)
+    // // vòng for trong => duyệt cột
+    // // tính tổng các phần tử cột cuối cùng
+    // let sum =0;
+    for (let i = 0; i <array.length ; i++) {
+        for (let j = 0; j <array[i].length ; j++) {
+            if (i==j){
+                sum += array[i][j];
+            }
+        }
+
+    }
+    // console.log(sum)
+    //
+    // // lưu danh sách sinh viên bằng mảng 2 chiều
+    // let studentList = [
+    //     [1,"chánh", "nam",20, "c09"],
+    //     [2,"chánh2", "nam",20, "c09"],
+    //     [3,"chánh3", "nam",20, "c09"],
+    // ]
+    // tạo mảng số n x m từ bàn phím
+
+    // let n =+ prompt("nhập số hàng :")
+    // let m =+ prompt("nhập số cột :");
+    //
+    // let array = new Array(n);
+    // for (let i = 0; i <array.length ; i++) {
+    //     array[i] = new Array(m);
+    //     for (let j = 0; j <array[i].length ; j++) {
+    //         array[i][j] = +prompt("nhập vào phần tử thứ : "+ i+ ":" +j);
+    //     }
+    // }
+    // console.log(array)
+
+</script>
+</body>
+</html>
