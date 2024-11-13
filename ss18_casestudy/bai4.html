@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bai_4</title>
+</head>
+<body>
+<script>
+    let phanSo = +prompt("nhập phân số");
+    find(phanSo);
+    function find(x) {
+        // kiểm x có phải là phần số /yy/aa
+
+        let mang = x.split("/");
+        alert(mang);
+
+        if (mang.length==2){
+            let tu = mang[0];
+            let mau = mang[1];
+            if (tu%1==0 && mau%1==0&&mau!=0){
+              alert("ok")
+            }else {
+                alert("not")
+            }
+        }else {
+            alert("not")
+        }
+
+    }
+</script>
+</body>
+</html>
