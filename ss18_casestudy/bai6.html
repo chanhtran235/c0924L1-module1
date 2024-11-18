@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<label for="studenId"></label><input id="studenId" placeholder="nhập mã học viên">-->
+<!--<label for="name"></label><input id="name" placeholder="nhập tên học viên">-->
+<!--<label for="Class"></label><input id ="Class" placeholder="nhập lớp học viên">-->
+<!--<label for="email"></label><input id = "email" placeholder="nhập email học viên">-->
+<!--<label for="DOB"></label><input id = "DOB" placeholder="ngày tháng năm sinh">-->
+<!--<label for="module"></label><input id = "module" placeholder="nhập module học viên">-->
+<button onclick="updateStuden()">chỉnh sửa</button>
+<button onclick="deleteStuden()">xóa học viên</button>
+<button onclick="addNew()">thêm mới</button><br>
+<p id = "result"></p>
+<script>
+
+
+    class studen {
+        constructor(studenId,name,Class,email,DOB,module) {
+            this.studenId = studenId;
+            this.name = name ;
+            this.Class = Class;
+            this.email = email;
+            this.DOB = DOB;
+            this.module = module;
+        }
+    }
+    let studen1 = new studen("C09-001","Nguyễn Văn A","C09","Nguyenvana@gmail.com","01/08/2000","module1");
+    let studen2 = new studen("C09-002","Nguyễn Văn B","C09","Nguyenvanb@gmail.com","02/08/2000","module1");
+    let studen3 = new studen("C09-003","Nguyễn Văn C","C09","Nguyenvanc@gmail.com","03/08/2000","module1");
+    let studen4 = new studen("C09-004","Nguyễn Văn D","C09","Nguyenvand@gmail.com","0/08/2000","module1");
+    let studenList = [studen1,studen2,studen3,studen4];
+    display();
+    function addNew() {
+        let studenId = prompt("nhập mã học viên");
+        let name = prompt("nhập têm học viên");
+        let Class = prompt("nhập lớp học viên");
+        let email = prompt("nhập email học viên");
+        let DOB = prompt("nhập ngày tháng năm sinh");
+        let module = prompt("nhập module")
+        if (studenId !==""&& name!==""&& Class!=="" && email!==""&&DOB!==""&& module !==""){
+
+            let kiemTraId = false;
+            for (let i = 0; i <studenList.length ; i++) {
+                if (studenList[i].studenId==studenId){
+                    kiemTraId =true
+                    break;
+                }
+            }
+            if (kiemTraId){
+                alert("id đã tồn tại")
+            }else {
+                let newStuden = new studen(studenId,name,Class,email,DOB,module);
+                studenList.push(newStuden);
+            }
+
+        }else {
+            alert("yêu cầu nhập thông tin học viên");
+        }
+        // document.getElementById("studenId").value=``;
+        // document.getElementById("name").value=``;
+        // document.getElementById("Class").value=``;
+        // document.getElementById("email").value=``;
+        // document.getElementById("DOB").value=``;
+        // document.getElementById("module").value=``;
+
+        display();
+    }
+    function display() {
+        let tableString = `<table border="1" style="border-collapse: collapse">
+                            <tr>
+                                <th>stt</th>
+                                <th>Mã học viên</th>
+                                <th>Tên</th>
+                                <th>Lớp</th>
+                                <th>Email</th>
+                                <th>Ngày sinh</th>
+                                <th>module</th>
+                            </tr>`;
+        for (let i = 0; i < studenList.length; i++) {
+            tableString += `
+                             <tr>
+                                <td>${i + 1}</td>
+                                <td>${studenList[i].studenId}</td>
+                                <td>${studenList[i].name}</td>
+                                <td>${studenList[i].Class}</td>
+                                <td>${studenList[i].email}</td>
+                                <td>${studenList[i].DOB}</td>
+                                <td>${studenList[i].module}</td>
+
+                            </tr>
+             `;
+        }
+
+        tableString += `</table>`
+        document.getElementById('result').innerHTML = tableString;
+        // document.getElementById('số học viên').innerText = studenList.length;
+    }
+
+    function deleteStuden(index) {
+        // let id = prompt("nhập mã học viên bạn muốn xóa");
+
+        let conf = confirm("bạn có muốn xóa học viên:"+studenList[index].name+"?");
+        if (conf){
+            studenList.splice(index,1);
+        }
+        display();
+    }
+    function updateStuden(index) {
+        let studenId= prompt("nhập mã học viên mới");
+        let name = prompt("nhập tên học viên");
+        let Class = prompt("nhập lớp học viên mới");
+        let email = prompt("nhập email học viên mới");
+        let DOB = prompt("nhập ngày tháng năm sinh")
+        studenList[index]= new studen (studenId,name,Class,email,DOB);
+        display();
+    }
+</script>
+</body>
+</html>

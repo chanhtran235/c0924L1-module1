@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let n = prompt("Nhập độ dài của mảng :");
+    // dùng vòng lặp để kiểm tra
+    while (n % 2 !== 0 || n <= 0) {
+        n = prompt("nhập lại n");
+    }
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        let num = +prompt(`Nhập phần tử thứ ${i + 1}`);
+        arr.push(num);
+    }
+    // thiểu hiển thị =
+    alert("mảng vừa nhập là : " + arr);
+    console.log(checkPairs(arr))
+
+    function checkPairs(arr) {
+        for (let i = 0; i < arr.length - 1; i += 2) {
+            if (arr[i] >= arr[i + 1]) {
+                alert("NO");
+               return;
+            }
+        }
+        alert("OK");
+    }
+
+</script>
+</body>
+</html>
